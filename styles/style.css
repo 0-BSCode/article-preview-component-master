@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+/*---------- GENERAL DECLARATIONS ----------*/
+
+:root {
+    font-size: 10px;
+    --dark-gray-blue: hsl(217, 19%, 35%);
+    --dark-blue: hsl(214, 17%, 51%);
+    --gray-blue: hsl(212, 23%, 69%);
+    --light-gray-blue: hsl(210, 46%, 95%);
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--light-gray-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+/*---------- CARD ----------*/
+div.card-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    max-width: 88rem;
+    height: 36rem;
+    margin: 20rem auto 19rem auto;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 0px 15px 33px -25px rgb(0 0 0 / 75%);
+}
+
+/*----- CARD IMAGE -----*/
+div.card-img {
+    background-image: url("../images/drawers.jpg");
+    background-position: center left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+}
+
+/*----- CARD TEXT -----*/
+div.card-text-wrapper {
+    display: flex;
+}
+
+div.card-text-wrapper div.card-text {
+    width: 80%;
+    margin: auto;
+}
+
+div.card-text-wrapper div.card-text h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    font-family: 'Manrope', 'sans-serif';
+    color: var(--dark-gray-blue);
+}
+
+div.card-text-wrapper div.card-text p.card-text-par {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+    line-height: 2.3rem;
+    font-family: 'Manrope', 'sans-serif';
+    color: var(--dark-gray-blue);
+}
+
+div.card-text-wrapper div.account-wrapper {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 0.7fr 3fr 1fr;
+}
+
+div.card-text-wrapper div.account-wrapper img.account-img {
+    width: 5rem;
+    border-radius: 50%;
+}
+
+div.card-text-wrapper div.account-wrapper div.account-info p {
+    font-family: 'Manrope', 'sans-serif';
+}
+
+div.card-text-wrapper div.account-wrapper div.account-info p.account-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--dark-gray-blue);
+}
+
+div.card-text-wrapper div.account-wrapper div.account-info p.account-date {
+    font-size: 1.5rem;
+    color: var(--gray-blue);
+}
+
+div.card-text-wrapper div.account-wrapper button.share-btn {
+    background-image: url("../images/icon-share.svg");
+    background-color: var(--light-gray-blue);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: none;
+    margin-left: 6rem;
+    z-index: 2;
+}
+
+.active-btn {
+    filter: invert(100%) brightness(2);
+}
+
+/*---------- SHARE CONTAINER ----------*/
+div.share-container {
+    position: relative;
+}
+
+/*---------- POP UP BLOCK ----------*/
+
+.show {
+    visibility: visible !important;
+}
+
+div.popup-wrapper {
+    position: absolute;
+    top: -10rem;
+    right: -18rem;
+    width: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
+}
+
+div.popup-wrapper div.popup-block {
+    width: 30rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    padding: 2rem 2rem 2rem 2rem;
+    background-color: var(--dark-gray-blue);
+    border-radius: 1.2rem;
+    box-shadow: 0px 15px 33px -25px rgb(0 0 0 / 100%);
+    z-index: 1;
+}
+
+div.popup-wrapper div.popup-arrow {
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid var(--dark-gray-blue);
+    box-shadow: 0px 15px 33px -25px rgb(0 0 0 / 100%);
+    z-index: 1;
+}
+
+div.popup-wrapper div.popup-block button.btn-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: inherit;
+}
+
+div.popup-wrapper div.popup-block button.share-txt {
+    border: none;
+    background-color: inherit;
+    color: var(--dark-blue);
+    font-family: 'Manrope', 'sans-serif';
+    font-size: 1.5rem;
+    letter-spacing: 0.3rem;
+}
+
+div.popup-wrapper div.popup-block button.facebook-btn {
+    background-image: url("../images/icon-facebook.svg");
+}
+
+div.popup-wrapper div.popup-block button.twitter-btn {
+    background-image: url("../images/icon-twitter.svg");
+}
+
+div.popup-wrapper div.popup-block button.pinterest-btn {
+    background-image: url("../images/icon-pinterest.svg");
+}
+
+/*---------- MEDIA QUERIES ----------*/
+
+@media only screen and (min-width:1024px) and (max-width: 1400px) {
+    
+    :root {
+        font-size: 9px;
+    }
+
+    /*---------- CARD ----------*/
+    div.card-wrapper {
+        margin-top: 15rem;
+        margin-bottom: 14rem;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width: 1023px) {
+    
+    :root {
+        font-size: 9px;
+    }
+
+    /*---------- CARD ----------*/
+    div.card-wrapper {
+        width: 60rem;
+        height: 95rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.5fr;
+        border-radius: 1.8rem;
+    }
+
+    /*----- CARD IMAGE -----*/
+    div.card-img {
+        border-top-left-radius: inherit;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: inherit;
+    }
+
+    /*----- CARD TEXT -----*/
+    div.card-text-wrapper div.card-text {
+        margin-top: 8rem;
+    }
+
+    div.card-text-wrapper div.card-text h1 {
+        font-size: 3rem;
+        text-align: justify;
+        line-height: 4rem;
+    }
+
+    div.card-text-wrapper div.card-text p.card-text-par {
+        margin-top: 4rem;
+        margin-bottom: 5rem;
+        font-size: 2.25rem;
+        line-height: 3.5rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper div.account-info, 
+    div.card-text-wrapper div.account-wrapper div.share-container button.share-btn {
+        margin-top: 1.3rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper img.account-img {
+        width: 6.5rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper div.account-info {
+        margin-left: 3rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper div.account-info p.account-name {
+        font-size: 2rem;
+        margin-bottom: 0.7rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper div.account-info p.account-date {
+        font-size: 1.9rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper button.share-btn {
+        width: 6rem;
+        height: 6rem;
+        background-size: 35%;
+        z-index: 2;
+    }
+
+    div.popup-wrapper {
+        top: -2.3rem;
+        right: 3.95rem;
+        z-index: 0;
+    }
+
+    div.popup-wrapper div.popup-block {
+        width: 60rem;
+        height: 13rem;
+        box-shadow: none;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 1.8rem;
+        border-bottom-right-radius: 1.8rem;
+        grid-template-columns: 2.2fr 1fr 1fr 1fr 2fr;
+        align-items: center;
+    }
+    
+    div.popup-wrapper div.popup-arrow {
+        visibility: hidden !important;
+    }
+
+    div.popup-wrapper div.popup-block button.share-txt {
+        font-size: 2.3rem;
+        letter-spacing: 0.6rem;
+    }
+
+    div.popup-wrapper div.popup-block button.btn-img {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width: 767px) {
+    
+    :root {
+        font-size: 7px;
+    }
+
+    /*---------- CARD ----------*/
+    div.card-wrapper {
+        width: 60rem;
+        height: 100rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.5fr;
+        border-radius: 1.9rem;
+    }
+
+    /*----- CARD IMAGE -----*/
+    div.card-img {
+        border-top-left-radius: inherit;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: inherit;
+    }
+
+    /*----- CARD TEXT -----*/
+    div.card-text-wrapper div.card-text {
+        margin-top: 8rem;
+    }
+
+    div.card-text-wrapper div.card-text h1 {
+        font-size: 3rem;
+        text-align: justify;
+        line-height: 4rem;
+    }
+
+    div.card-text-wrapper div.card-text p.card-text-par {
+        margin-top: 4rem;
+        margin-bottom: 8.1rem;
+        font-size: 2.25rem;
+        line-height: 3.5rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper div.account-info, 
+    div.card-text-wrapper div.account-wrapper div.share-container button.share-btn {
+        margin-top: 1.3rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper img.account-img {
+        width: 6.5rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper div.account-info {
+        margin-left: 3rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper div.account-info p.account-name {
+        font-size: 2rem;
+        margin-bottom: 0.7rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper div.account-info p.account-date {
+        font-size: 1.9rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper button.share-btn {
+        width: 6rem;
+        height: 6rem;
+        background-size: 35%;
+        z-index: 2;
+    }
+
+    div.popup-wrapper {
+        top: -2.3rem;
+        right: 3.95rem;
+        z-index: 0;
+    }
+
+    div.popup-wrapper div.popup-block {
+        width: 60rem;
+        height: 13rem;
+        box-shadow: none;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 1.9rem;
+        border-bottom-right-radius: 1.9rem;
+        grid-template-columns: 2.2fr 1fr 1fr 1fr 2fr;
+        align-items: center;
+    }
+    
+    div.popup-wrapper div.popup-arrow {
+        visibility: hidden !important;
+    }
+
+    div.popup-wrapper div.popup-block button.share-txt {
+        font-size: 2.3rem;
+        letter-spacing: 0.6rem;
+    }
+
+    div.popup-wrapper div.popup-block button.btn-img {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+@media only screen and (min-width:368px) and (max-width: 479px) {
+    
+    :root {
+        font-size: 6px;
+    }
+
+    /*---------- CARD ----------*/
+    div.card-wrapper {
+        width: 55rem;
+        height: 100rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.3fr;
+        border-radius: 1.9rem;
+    }
+
+    /*----- CARD IMAGE -----*/
+    div.card-img {
+        border-top-left-radius: inherit;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: inherit;
+    }
+
+    /*----- CARD TEXT -----*/
+    div.card-text-wrapper div.card-text {
+        margin-top: 6rem;
+        width: 85%;
+    }
+
+    div.card-text-wrapper div.card-text h1 {
+        font-size: 2.9rem;
+        line-height: 4rem;
+    }
+
+    div.card-text-wrapper div.card-text p.card-text-par {
+        margin-top: 4rem;
+        margin-bottom: 6.1rem;
+        font-size: 2.25rem;
+        line-height: 3.5rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper div.account-info, 
+    div.card-text-wrapper div.account-wrapper div.share-container button.share-btn {
+        margin-top: 0rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper img.account-img {
+        width: 7rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper div.account-info {
+        margin-left: 3.5rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper div.account-info p.account-name {
+        font-size: 2.3rem;
+        margin-bottom: 0.7rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper div.account-info p.account-date {
+        font-size: 2rem;
+    }
+
+    div.card-text-wrapper div.account-wrapper button.share-btn {
+        width: 7rem;
+        height: 7rem;
+        background-size: 35%;
+        z-index: 2;
+    }
+
+    div.popup-wrapper {
+        top: -3.9rem;
+        right: 3.4rem;
+        z-index: 0;
+    }
+
+    div.popup-wrapper div.popup-block {
+        width: 55rem;
+        height: 15rem;
+        box-shadow: none;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 1.9rem;
+        border-bottom-right-radius: 1.9rem;
+        grid-template-columns: 2.2fr 1fr 1fr 1fr 2fr;
+        align-items: center;
+    }
+    
+    div.popup-wrapper div.popup-arrow {
+        visibility: hidden !important;
+    }
+
+    div.popup-wrapper div.popup-block button.share-txt {
+        font-size: 2.3rem;
+        letter-spacing: 0.6rem;
+    }
+
+    div.popup-wrapper div.popup-block button.btn-img {
+        width: 4rem;
+        height: 4rem;
+    }
+}
