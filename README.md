@@ -125,4 +125,3 @@ In future projects, I hope to dive into more complex JS since my understanding o
 ## Acknowledgments
 
 Thank you so much to [LaplaceXD](https://github.com/LaplaceXD) for helping me figure out how to anchor the popup to the share button so that I don't have to tweak its position in the media queries.
->>>>>>> master
